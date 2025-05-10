@@ -1,3 +1,9 @@
+
+Prophecy blows into town with the storm. She carries a green reed on her back, a blithe smile, and twenty sheep-bone dice in her pockets. 
+bg empty
+
+The rain drapes over her as sheets and curtains. She squints past it into the night.
+fx rain
 Prophecy
 Nay, none of those folks.
 bg welcome
