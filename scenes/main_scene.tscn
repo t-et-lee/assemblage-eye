@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://dqdmae77c2fs3"]
+[gd_scene load_steps=3 format=3 uid="uid://dqdmae77c2fs3"]
 
 [ext_resource type="PackedScene" uid="uid://dx8y6piuw0t0a" path="res://scenes/layers.tscn" id="1_w2twt"]
+[ext_resource type="PackedScene" uid="uid://cuu7ihve1vdgm" path="res://scenes/layers/textbox.tscn" id="2_pw63i"]
 
 [node name="main_scene" type="Control"]
 layout_mode = 3
@@ -11,3 +12,6 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="Layers" parent="." instance=ExtResource("1_w2twt")]
+
+[node name="Textbox" parent="." instance=ExtResource("2_pw63i")]
+layout_mode = 1
