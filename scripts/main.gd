@@ -7,18 +7,26 @@ var list_texts = []
 
 func _ready() -> void:
 	list_texts.append("res://texts/rainscene.txt")
-	currenttext = load_text(0)
+	load_text(0)
 	gamehandler.connect("text_accept", next_text)
 
 func next_text():
 	if gameflags.flag_input_acceptable:
 		gameflags.flag_input_acceptable = false
 		#First read the name of the speaker.
-		var newline = currenttext.get_line()
+		var newline = self.currenttext.get_line()
 		textbox.change_speaker(newline)
 		#Then read their dialogue and send it over.
 		newline = currenttext.get_line()
 		textbox.change_text(newline)
+		#Then read the miscellaneous commands
+		newline = currenttext.get_line()
+		match newline:
+			"bg welcome":
+				layers.bg.texture = load("res://backgrounds/bg welcome.png")
+			"fx rain":
+				layers.fx.queue_free()
+				layers.fx = load("res://scenes/layers/fx_rain.tscn").instantiate()
 
 func load_text(filenum: int):
-	currenttext = FileAccess.open(list_texts[filenum],FileAccess.READ)
+	self.currenttext = FileAccess.open(list_texts[filenum],FileAccess.READ)

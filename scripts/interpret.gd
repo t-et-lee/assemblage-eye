@@ -19,5 +19,6 @@ func _physics_process(delta: float) -> void:
 			gameflags.flag_input_acceptable = true
 
 
-func _on_click(_viewport: Node, _event: InputEvent, _shape_idx: int) -> void:
-	gamehandler.emit_signal("text_accept")
+func _on_click(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
+	if event.is_pressed():
+		gamehandler.emit_signal("text_accept")

@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bjms2jjh6yj28" path="res://backgrounds/fx rain1.png" id="1_8b653"]
 [ext_resource type="Script" uid="uid://cp7l66a0b6hbo" path="res://scripts/fx_rain.gd" id="2_iarsv"]
 
-[node name="fx_rain" type="Sprite2D"]
+[node name="fx" type="Sprite2D"]
 position = Vector2(0, -1080)
 texture = ExtResource("1_8b653")
 centered = false
