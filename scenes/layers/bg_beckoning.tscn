@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://bwg8ugvwc6ylf" path="res://backgrounds/bg welcome.png" id="1_ijhxd"]
 
 [node name="bg" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
 scale = Vector2(0.34, 0.34)
 texture = ExtResource("1_ijhxd")
 centered = false

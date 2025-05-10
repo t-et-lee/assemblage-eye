@@ -26,11 +26,14 @@ func next_text():
 		newline = currenttext.get_line()
 		match newline:
 			"bg welcome":
-				layers.bg.texture = load("res://backgrounds/bg welcome.png")
+				layers.bg.queue_free()
+				layers.bg = load("res://scenes/layers/bg_beckoning.tscn").instantiate()
+				layers.add_child(layers.bg)
 			"fx rain":
 				layers.fx.queue_free()
 				layers.fx = load("res://scenes/layers/fx_rain.tscn").instantiate()
 				layers.add_child(layers.fx)
+				layers.fx.z_index += 1
 
 func load_text(filenum: int):
 	self.currenttext = FileAccess.open(list_texts[filenum],FileAccess.READ)

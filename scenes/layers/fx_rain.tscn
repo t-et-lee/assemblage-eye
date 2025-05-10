@@ -4,6 +4,7 @@
 [ext_resource type="Script" uid="uid://cp7l66a0b6hbo" path="res://scripts/fx_rain.gd" id="2_iarsv"]
 
 [node name="fx" type="Sprite2D"]
+self_modulate = Color(1, 1, 1, 0)
 position = Vector2(0, -1080)
 texture = ExtResource("1_8b653")
 centered = false

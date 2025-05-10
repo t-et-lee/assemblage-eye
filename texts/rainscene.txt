@@ -1,9 +1,14 @@
-
+Parking Garage 28E
 Prophecy blows into town with the storm. She carries a green reed on her back, a blithe smile, and twenty sheep-bone dice in her pockets. 
 bg empty
-
+Parking Garage 28E
 The rain drapes over her as sheets and curtains. She squints past it into the night.
 fx rain
+Parking Garage 28E
+Men in jackets and ponchos appear, cackling together like crows. They pass as a roaring train into the distance. 
+
 Prophecy
-Nay, none of those folks.
+Nay, none of those folks. But I see shelter up ahead.
 bg welcome
+Prophecy
+It's like it's welcoming me...
