@@ -1,3 +1,6 @@
-[gd_scene format=3 uid="uid://nnoofj44m2o8"]
+[gd_scene load_steps=2 format=3 uid="uid://nnoofj44m2o8"]
 
-[node name="flags" type="Node"]
+[ext_resource type="Script" uid="uid://dl8watqet1bl7" path="res://scripts/gameflags.gd" id="1_26hix"]
+
+[node name="gameflags" type="Node"]
+script = ExtResource("1_26hix")

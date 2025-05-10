@@ -17,7 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Flags="*res://scenes/flags.tscn"
+gameflags="*res://scenes/flags.tscn"
+gamehandler="*res://scenes/gamehandler.tscn"
 
 [display]
 

@@ -1,8 +1,11 @@
-[gd_scene load_steps=4 format=3 uid="uid://cuu7ihve1vdgm"]
+[gd_scene load_steps=5 format=3 uid="uid://cuu7ihve1vdgm"]
 
 [ext_resource type="Texture2D" uid="uid://bh1u56674ex3d" path="res://backgrounds/textbox.png" id="1_d8xs7"]
-[ext_resource type="Script" uid="uid://dkkvngvwg0eb7" path="res://scenes/layers/interpret.gd" id="1_iygw8"]
+[ext_resource type="Script" uid="uid://dkkvngvwg0eb7" path="res://scripts/interpret.gd" id="1_iygw8"]
 [ext_resource type="Theme" uid="uid://b02qwgec6uifq" path="res://Charactertag.tres" id="2_blx04"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iygw8"]
+size = Vector2(1291, 131)
 
 [node name="Textbox" type="Control"]
 custom_minimum_size = Vector2(640, 110)
@@ -20,12 +23,20 @@ position = Vector2(0, -29)
 texture = ExtResource("1_d8xs7")
 centered = false
 
+[node name="AreaTextaccept" type="Area2D" parent="Background"]
+position = Vector2(0, 29)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/AreaTextaccept"]
+position = Vector2(635.5, 42.5)
+shape = SubResource("RectangleShape2D_iygw8")
+
 [node name="Character_Name" type="RichTextLabel" parent="."]
 layout_mode = 0
 offset_left = 13.0
 offset_top = 13.0
 offset_right = 177.0
 offset_bottom = 53.0
+mouse_filter = 2
 theme = ExtResource("2_blx04")
 text = "Prophecy"
 fit_content = true
@@ -37,6 +48,10 @@ offset_left = 14.0
 offset_top = 57.0
 offset_right = 225.0
 offset_bottom = 97.0
+mouse_filter = 2
 text = "Nay. None of those fellows."
 fit_content = true
 autowrap_mode = 0
+
+[connection signal="input_event" from="Background/AreaTextaccept" to="." method="_on_area_textaccept_input_event" flags=6]
+[connection signal="input_event" from="Background/AreaTextaccept" to="." method="_on_click"]
