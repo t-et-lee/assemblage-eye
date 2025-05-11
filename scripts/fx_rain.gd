@@ -4,7 +4,6 @@ extends Sprite2D
 @onready var texture_1 = preload("res://backgrounds/fx rain1.png")
 @onready var texture_2 = preload("res://backgrounds/fx rain2.png")
 @onready var texture_3 = preload("res://backgrounds/fx rain3.png")
-	
 
 func _physics_process(delta: float) -> void:
 	timr_reset += 1

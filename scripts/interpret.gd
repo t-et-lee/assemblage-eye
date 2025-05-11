@@ -13,7 +13,7 @@ func change_text(new: String, speed: int = 1):
 	speech.visible_characters = 0
 
 func _physics_process(delta: float) -> void:
-	if speech.visible_ratio != 1.0:
+	if speech.visible_ratio != 1.0 and gameflags.flag_savemenu_open == false:
 		speech.visible_characters += speechspeed
 		if speech.visible_ratio == 1.0:
 			gameflags.flag_input_acceptable = true
@@ -21,4 +21,8 @@ func _physics_process(delta: float) -> void:
 
 func _on_click(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event.is_pressed():
+		gamehandler.emit_signal("text_accept")	
+
+func _unhandled_input(event: InputEvent) -> void:
+	if event.is_action("Progress"):
 		gamehandler.emit_signal("text_accept")

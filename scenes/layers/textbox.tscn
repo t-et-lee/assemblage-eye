@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://cuu7ihve1vdgm"]
 
-[ext_resource type="Texture2D" uid="uid://bh1u56674ex3d" path="res://backgrounds/textbox.png" id="1_d8xs7"]
+[ext_resource type="Texture2D" uid="uid://bh1u56674ex3d" path="res://ui/textbox.png" id="1_d8xs7"]
 [ext_resource type="Script" uid="uid://dkkvngvwg0eb7" path="res://scripts/interpret.gd" id="1_iygw8"]
 [ext_resource type="Theme" uid="uid://b02qwgec6uifq" path="res://Charactertag.tres" id="2_blx04"]
 
@@ -39,7 +39,7 @@ offset_right = 177.0
 offset_bottom = 53.0
 mouse_filter = 2
 theme = ExtResource("2_blx04")
-text = "Prophecy"
+text = "Click here or press Z to progress."
 fit_content = true
 autowrap_mode = 0
 
@@ -49,8 +49,9 @@ offset_left = 14.0
 offset_top = 57.0
 offset_right = 225.0
 offset_bottom = 97.0
+pivot_offset = Vector2(765, -315)
 mouse_filter = 2
-text = "Nay. None of those fellows."
+text = "On controller, bottom action is sufficient."
 fit_content = true
 autowrap_mode = 0
 

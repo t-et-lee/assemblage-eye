@@ -4,6 +4,6 @@
 
 [node name="bg" type="Sprite2D"]
 self_modulate = Color(1, 1, 1, 0)
-scale = Vector2(0.34, 0.34)
+scale = Vector2(0.679688, 0.661111)
 texture = ExtResource("1_ijhxd")
 centered = false
