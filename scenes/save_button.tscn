@@ -1,11 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://dpwhg0h5ygmcr"]
+[gd_scene load_steps=6 format=3 uid="uid://dpwhg0h5ygmcr"]
 
 [ext_resource type="Script" uid="uid://cqw2wwrngm1e8" path="res://save_button.gd" id="1_vofgn"]
 [ext_resource type="Texture2D" uid="uid://cb6ks485ln8b8" path="res://ui/text-button.png" id="2_53dfd"]
 [ext_resource type="Theme" uid="uid://b02qwgec6uifq" path="res://Charactertag.tres" id="3_53dfd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_56r8p"]
-size = Vector2(178, 156)
+size = Vector2(171, 147)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_53dfd"]
+size = Vector2(94, 91)
 
 [node name="save_button" type="Control"]
 z_index = 1
@@ -13,6 +16,10 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -25.0
+offset_top = -27.0
+offset_right = -25.0
+offset_bottom = -27.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
@@ -22,26 +29,53 @@ script = ExtResource("1_vofgn")
 position = Vector2(23, 0)
 texture = ExtResource("2_53dfd")
 
+[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
+z_index = -1
+position = Vector2(102, -18)
+texture = ExtResource("2_53dfd")
+
 [node name="AreaSave" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaSave"]
-position = Vector2(79, 68)
+position = Vector2(75.5, 63.5)
 shape = SubResource("RectangleShape2D_56r8p")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
 layout_mode = 0
-offset_left = 31.0
-offset_top = 31.0
-offset_right = 132.0
-offset_bottom = 103.0
+offset_left = 42.0
+offset_top = 41.0
+offset_right = 143.0
+offset_bottom = 113.0
 pivot_offset = Vector2(-115, 185)
 mouse_filter = 2
 theme = ExtResource("3_53dfd")
 bbcode_enabled = true
 text = "[center]Save
-Game"
+Spot"
+fit_content = true
+scroll_active = false
+autowrap_mode = 0
+
+[node name="AreaLoad" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLoad"]
+position = Vector2(214, 72.5)
+shape = SubResource("RectangleShape2D_53dfd")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+offset_left = 162.0
+offset_top = 29.0
+offset_right = 263.0
+offset_bottom = 101.0
+pivot_offset = Vector2(-115, 185)
+mouse_filter = 2
+theme = ExtResource("3_53dfd")
+bbcode_enabled = true
+text = "[center]Load
+Spot"
 fit_content = true
 scroll_active = false
 autowrap_mode = 0
 
 [connection signal="input_event" from="AreaSave" to="." method="_on_area_save_input_event"]
+[connection signal="input_event" from="AreaLoad" to="." method="_on_area_load_input_event"]

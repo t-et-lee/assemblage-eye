@@ -5,6 +5,7 @@ extends Control
 var currenttext
 var currentmenu
 var list_texts = []
+var text_index
 
 func _ready() -> void:
 	list_texts.append("res://texts/rainscene.txt")
@@ -12,6 +13,20 @@ func _ready() -> void:
 	gamehandler.connect("text_accept", next_text)
 	gamehandler.connect("open_save_menu", open_save_menu)
 	gamehandler.connect("close_save_menu", close_save_menu)
+
+func save_game(slot):
+	var bookmark = currenttext.get_position()
+	var savefull = PackedStringArray([str(text_index), str(bookmark), str(layers.bg.texture)])
+	var packedslot = FileAccess.open("user://saves/slot"+str(slot),FileAccess.WRITE)
+	packedslot.store_csv_line(savefull)
+	packedslot.close()
+
+func load_game(slot):
+	currenttext.close()
+	var packedslot = FileAccess.open("user://saves/slot"+str(slot),FileAccess.READ)
+	var filenum = packedslot.get_csv_line()
+	self.currenttext = FileAccess.open(list_texts[int(filenum[0])],FileAccess.READ)
+	self.currenttext.seek(int(filenum[1]))
 
 func close_save_menu():
 	# queue free the save menu
@@ -52,3 +67,4 @@ func next_text():
 
 func load_text(filenum: int):
 	self.currenttext = FileAccess.open(list_texts[filenum],FileAccess.READ)
+	text_index = filenum
