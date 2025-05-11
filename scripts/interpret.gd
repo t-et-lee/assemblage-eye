@@ -7,15 +7,15 @@ extends Control
 func change_speaker(new: String):
 	charname.text = new
 
-func change_text(new: String, speed: int = 1):
-	self.speechspeed = speed
+func change_text(new: String):
+	self.speechspeed = gameflags.flag_globalspeed
 	speech.text = new
 	speech.visible_characters = 0
 
 func _physics_process(delta: float) -> void:
 	if speech.visible_ratio != 1.0 and gameflags.flag_savemenu_open == false:
 		speech.visible_characters += speechspeed
-		if speech.visible_ratio == 1.0:
+		if speech.visible_ratio >= 1.0:
 			gameflags.flag_input_acceptable = true
 
 

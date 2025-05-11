@@ -25,13 +25,12 @@ grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_vofgn")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(23, 0)
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(125, -18)
 texture = ExtResource("2_53dfd")
 
-[node name="Sprite2D" type="Sprite2D" parent="Sprite2D"]
-z_index = -1
-position = Vector2(102, -18)
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(23, 0)
 texture = ExtResource("2_53dfd")
 
 [node name="AreaSave" type="Area2D" parent="."]
