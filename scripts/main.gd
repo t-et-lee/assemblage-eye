@@ -15,13 +15,18 @@ func _ready() -> void:
 
 func close_save_menu():
 	# queue free the save menu
+	currentmenu.queue_free()
 	gameflags.flag_savemenu_open = false
+	
 func open_save_menu():
-	# Instance the save menu here as currentmenu
+	print("Opening save menu!")
+	currentmenu = load("res://scenes/save_menu.tscn").instantiate()
+	self.add_child(currentmenu)
+	self.move_child(currentmenu, 0)
 	gameflags.flag_savemenu_open = true
 
 func next_text():
-	if gameflags.flag_input_acceptable:
+	if gameflags.flag_input_acceptable and gameflags.flag_savemenu_open == false:
 		gameflags.flag_input_acceptable = false
 		#First read the name of the speaker.
 		var newline = self.currenttext.get_line()
